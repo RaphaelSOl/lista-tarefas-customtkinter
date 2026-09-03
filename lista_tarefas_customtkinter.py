@@ -65,7 +65,7 @@ class TodoApp(ctk.CTk):
         # Contador
         self.counter_label = ctk.CTkLabel(
             self,
-            text="0 tarefas",
+            text="0 tarefa(s) cadastrada(s)",
             text_color="gray"
         )
         self.counter_label.pack(anchor="w", padx=30, pady=(5, 5))
