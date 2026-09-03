@@ -180,6 +180,7 @@ class TodoApp(ctk.CTk):
     # =========================
     # SALVAR / CARREGAR
     # =========================
+    # Salva as tarefas para que elas permaneçam após fechar o aplicativo.
     def save_tasks(self):
         try:
             with DATA_FILE.open("w", encoding="utf-8") as file:
