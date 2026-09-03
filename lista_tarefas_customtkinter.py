@@ -169,7 +169,7 @@ class TodoApp(ctk.CTk):
 
         delete_button = ctk.CTkButton(
             row,
-            text="Excluir",
+            text="🗑 Excluir",
             width=80,
             command=lambda i=index: self.delete_task(i),
             fg_color="#A83232",
