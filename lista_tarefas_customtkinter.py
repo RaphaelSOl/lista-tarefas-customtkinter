@@ -7,7 +7,7 @@ from pathlib import Path
 # CONFIGURAÇÕES
 # =========================
 APP_TITLE = "Lista de Tarefas"
-WINDOW_SIZE = "700x600"
+WINDOW_SIZE = "750x650"
 DATA_FILE = Path("tarefas.json")
 
 ctk.set_appearance_mode("dark")
@@ -65,7 +65,7 @@ class TodoApp(ctk.CTk):
         # Contador
         self.counter_label = ctk.CTkLabel(
             self,
-            text="0 tarefas",
+            text="0 tarefa(s) cadastrada(s)git add .",
             text_color="gray"
         )
         self.counter_label.pack(anchor="w", padx=30, pady=(5, 5))
@@ -169,7 +169,7 @@ class TodoApp(ctk.CTk):
 
         delete_button = ctk.CTkButton(
             row,
-            text="Excluir",
+            text="🗑 Excluir",
             width=80,
             command=lambda i=index: self.delete_task(i),
             fg_color="#A83232",
@@ -180,6 +180,7 @@ class TodoApp(ctk.CTk):
     # =========================
     # SALVAR / CARREGAR
     # =========================
+    # Salva as tarefas para que elas permaneçam após fechar o aplicativo.
     def save_tasks(self):
         try:
             with DATA_FILE.open("w", encoding="utf-8") as file:
