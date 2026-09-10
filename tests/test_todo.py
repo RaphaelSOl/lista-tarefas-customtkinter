@@ -20,6 +20,7 @@ class TestTodoApp(unittest.TestCase):
 
         return app
 
+    # Teste 1
     def test_add_task(self):
         app = self.create_app()
 
@@ -31,6 +32,17 @@ class TestTodoApp(unittest.TestCase):
         self.assertEqual(app.tasks[0]["text"], "Estudar Docker")
         self.assertFalse(app.tasks[0]["done"])
 
+    # Teste 2
+    def test_add_empty_task(self):
+        app = self.create_app()
+
+        app.task_entry.get.return_value = "   "
+
+        app.add_task()
+
+        self.assertEqual(len(app.tasks), 0)
+
+    # Teste 3
     def test_toggle_task(self):
         app = self.create_app()
 
@@ -45,6 +57,22 @@ class TestTodoApp(unittest.TestCase):
 
         self.assertTrue(app.tasks[0]["done"])
 
+    # Teste 4
+    def test_toggle_task_back_to_pending(self):
+        app = self.create_app()
+
+        app.tasks = [
+            {
+                "text": "Estudar Git",
+                "done": True
+            }
+        ]
+
+        app.toggle_task(0)
+
+        self.assertFalse(app.tasks[0]["done"])
+
+    # Teste 5
     def test_delete_task(self):
         app = self.create_app()
 
@@ -59,6 +87,7 @@ class TestTodoApp(unittest.TestCase):
 
         self.assertEqual(len(app.tasks), 0)
 
+    # Teste 6
     def test_clear_completed(self):
         app = self.create_app()
 
