@@ -36,3 +36,7 @@ jobs:
       - name: Verificar importação do CustomTkinter
         run: |
           python -c "import customtkinter; print('CustomTkinter instalado com sucesso')"
+
+      - name: Executar testes unitários
+        run: |
+          python -m unittest discover -s tests -v
