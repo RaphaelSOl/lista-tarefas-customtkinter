@@ -29,3 +29,4 @@ CustomTkinter
 JSON
 Git
 GitHub
+Discord Webhook

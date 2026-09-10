@@ -172,8 +172,8 @@ class TodoApp(ctk.CTk):
             text="🗑 Excluir",
             width=80,
             command=lambda i=index: self.delete_task(i),
-            fg_color="#A83232",
-            hover_color="#7D2525"
+            fg_color="#FF0084",
+            hover_color="#8C002F"
         )
         delete_button.pack(side="right", padx=10, pady=8)
 
